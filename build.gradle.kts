@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.connecttag.libs.kotlin"
-version = "1.0.6"
+version = "1.0.7"
 
 kotlin {
     jvmToolchain(21)
@@ -23,7 +23,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 
-    afterEvaluate {
     publishing {
         singleVariant("release") {
             withSourcesJar()
@@ -44,7 +43,7 @@ afterEvaluate {
             from(components["release"])
             groupId = "org.connecttag.libs.kotlin"
             artifactId = "integrity-guard"
-            version = "1.0.6"
+            version = "1.0.7"
 
             pom {
                 name.set("ConnectTag Integrity Guard")
