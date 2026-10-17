@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.connecttag.libs.kotlin"
-version = "1.0.7"
+version = "1.0.8"
 
 kotlin {
     jvmToolchain(21)
@@ -34,6 +34,8 @@ dependencies {
     implementation(libs.androidx.ktx)
     implementation(libs.timber)
     implementation(libs.kotlinx.coroutines.core)
+    api(libs.javax.inject)
+    compileOnly(libs.hilt.android)
 }
 
 afterEvaluate {
@@ -43,7 +45,7 @@ afterEvaluate {
             from(components["release"])
             groupId = "org.connecttag.libs.kotlin"
             artifactId = "integrity-guard"
-            version = "1.0.7"
+            version = "1.0.8"
 
             pom {
                 name.set("ConnectTag Integrity Guard")
